@@ -117,23 +117,3 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your web browser to view 
 
 ---
 
-## 🔒 Security & Best Practices
-
-* Keep `DEBUG = False` in your `settings.py` when deploying to production.
-* Never commit sensitive credentials or your Django `SECRET_KEY` to GitHub. Use environment variables.
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/NewFeature`).
-3. Commit your changes (`git commit -m 'Add some NewFeature'`).
-4. Push to the branch (`git push origin feature/NewFeature`).
-5. Open a Pull Request.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [MIT License](https://opensource.org) page for details.
