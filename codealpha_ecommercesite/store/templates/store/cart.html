@@ -1,0 +1,27 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<h2>Your Cart</h2>
+<div class="cart-wrapper" id="cart-main-box" style="max-width: 600px;">
+    {% for item in cart_items %}
+    <div class="cart-item" id="cart-row-{{ item.product.id }}" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <div>
+            <strong>{{ item.product.name }}</strong>
+            <div style="margin-top: 5px;">
+                <!-- Quantity controls -->
+                <button class="qty-btn" data-id="{{ item.product.id }}" data-action="decrease" style="padding: 2px 8px; cursor: pointer;">-</button>
+                <span id="qty-val-{{ item.product.id }}" style="margin: 0 10px; font-weight: bold;">{{ item.quantity }}</span>
+                <button class="qty-btn" data-id="{{ item.product.id }}" data-action="increase" style="padding: 2px 8px; cursor: pointer;">+</button>
+            </div>
+        </div>
+        <span>$<span id="total-val-{{ item.product.id }}">{{ item.total }}</span></span>
+    </div>
+    {% empty %}
+    <p id="empty-msg">Your cart is empty.</p>
+    {% endfor %}
+    <hr>
+    <h3>Grand Total: $<span id="cart-grand-total">{{ grand_total }}</span></h3>
+    {% if cart_items %}
+    <a href="{% url 'checkout' %}" id="checkout-btn" class="btn">Proceed to Checkout</a>
+    {% endif %}
+</div>
+{% endblock %}

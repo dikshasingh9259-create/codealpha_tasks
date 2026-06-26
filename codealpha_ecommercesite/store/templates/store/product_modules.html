@@ -1,0 +1,14 @@
+{% for product in products %}
+<div class="product-card">
+    {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    {% else %}
+        <img src="https://placeholder.com" alt="No image available">
+    {% endif %}
+    <h3><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h3>
+    <p class="price">${{ product.price }}</p>
+    <button class="btn add-cart-btn" data-id="{{ product.id }}">Add to Cart</button>
+</div>
+{% empty %}
+<p style="grid-column: 1/-1; text-align: center; color: #666; padding: 20px;">No products match your search.</p>
+{% endfor %}

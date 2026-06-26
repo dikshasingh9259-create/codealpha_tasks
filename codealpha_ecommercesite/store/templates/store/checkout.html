@@ -1,0 +1,17 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<div class="form-wrapper">
+    {% if success %}
+        <h2>Order Processed Successfully! Thank you.</h2>
+        <a href="{% url 'product_list' %}" class="btn">Continue Shopping</a>
+    {% else %}
+        <h2>Checkout Shipping Information</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label>Delivery Address:</label>
+            <textarea name="address" required rows="4" style="width:100%; margin-bottom:15px; border-radius:4px; border:1px solid #ddd;"></textarea>
+            <button type="submit" class="btn">Complete Purchase</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<div class="search-container" style="margin-bottom: 30px; text-align: center;">
+    <input type="text" id="search-bar" placeholder="Search products..." autocomplete="off" 
+           style="width: 100%; max-width: 500px; padding: 12px 20px; font-size: 1rem; border-radius: 25px; border: 1px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.05); outline: none;">
+</div>
+
+<h2>Products Portfolio</h2>
+<!-- We give this div an ID so JavaScript can find it and update it -->
+<div class="product-grid" id="product-grid-container">
+    {% include 'store/product_modules.html' %}
+</div>
+{% endblock %}
