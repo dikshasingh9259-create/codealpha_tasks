@@ -26,14 +26,44 @@ A dynamic, full-stack e-commerce web application featuring a responsive HTML/CSS
 
 ## 📦 Project Structure
 
-```text
-├── core/                  # Django project configuration folder
-├── ecom_app/              # Main application logic (views, models, urls)
-│   ├── static/            # Frontend assets (CSS, JS, Images)
-│   └── templates/         # HTML structure files
-├── manage.py              # Django management script
-└── requirements.txt       # Project dependencies
-```
+CODEALPHA_TASKS/
+└── codealpha_ecommercesite/
+    ├── ecommerce/
+    │   ├── __init__.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── media/
+    │   └── products/
+    │       ├── FROCK.avif
+    │       ├── jeans.jpg
+    │       ├── kurta_set.webp
+    │       ├── shirt.webp
+    │       ├── shoes.jfif
+    │       └── tshirt.webp
+    ├── store/
+    │   ├── migrations/
+    │   ├── static/
+    │   │   └── store/
+    │   │       ├── cart.js
+    │   │       └── style.css
+    │   ├── templates/
+    │   │   └── store/
+    │   │       ├── base.html
+    │   │       ├── cart.html
+    │   │       ├── checkout.html
+    │   │       ├── login.html
+    │   │       ├── product_detail.html
+    │   │       ├── product_list.html
+    │   │       ├── product_modules.html
+    │   │       └── register.html
+    │   ├── __init__.py
+    │   ├── admin.py
+    │   ├── models.py
+    │   └── views.py
+    ├── db.sqlite3
+    ├── manage.py
+    └── README.md
 
 ---
 
@@ -43,7 +73,7 @@ Follow these steps to set up and run the project locally on your machine:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com
+git clone https://github.com/dikshasingh9259-create/codealpha_tasks/tree/main/codealpha_ecommercesite
 cd your-repo-name
 ```
 
