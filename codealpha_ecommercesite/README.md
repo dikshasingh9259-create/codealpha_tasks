@@ -25,7 +25,7 @@ A dynamic, full-stack e-commerce web application featuring a responsive HTML/CSS
 ---
 
 ## 📦 Project Structure
-text 
+```text
 CODEALPHA_ECOMMERCESITE/
 ├── ecommerce/      # Main application logic and components
 ├── store/          # Store-specific logic, products, or checkout
@@ -34,7 +34,7 @@ CODEALPHA_ECOMMERCESITE/
 ├── db.sqlite3      # The project's SQLite database file
 ├── manage.py       # Django command-line utility for administrative tasks
 └── README.md       # Project documentation and setup instructions
-
+```
   
 ## ⚙️ Installation and Setup
 
