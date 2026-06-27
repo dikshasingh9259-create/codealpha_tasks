@@ -28,8 +28,8 @@ SOCIALMEDIAPLATFORM/
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-link>
-   cd SOCIALMEDIAPLATFORM
+   git clone https://github.com/dikshasingh9259-create/codealpha_tasks/tree/main/codealpha_socialmediaplatform
+   cd socialmediaplatform
    ```
 
 2. **Create a Virtual Environment**
