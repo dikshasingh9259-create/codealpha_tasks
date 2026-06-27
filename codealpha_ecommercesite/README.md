@@ -25,84 +25,17 @@ A dynamic, full-stack e-commerce web application featuring a responsive HTML/CSS
 ---
 
 ## 📦 Project Structure
+text 
+CODEALPHA_ECOMMERCESITE/
+├── ecommerce/      # Main application logic and components
+├── store/          # Store-specific logic, products, or checkout
+├── media/          # Directory for uploaded media (e.g., product images)
+│   └── products/   # Sub-folder specifically for product assets
+├── db.sqlite3      # The project's SQLite database file
+├── manage.py       # Django command-line utility for administrative tasks
+└── README.md       # Project documentation and setup instructions
 
-CODEALPHA_TASKS/
-└── codealpha_ecommercesite/
-<<<<<<< Updated upstream
-    ├── ecommerce/                  # Main Django project configuration folder
-    │   ├── __init__.py
-    │   ├── settings.py            # Project settings and configurations
-    │   ├── urls.py                # Main routing and URL patterns
-    │   └── wsgi.py                # WSGI deployment configuration
-    ├── media/                      # User-uploaded media files
-    │   └── products/              # Product images displayed on the storefront
-=======
-    ├── ecommerce/
-    │   ├── __init__.py
-    │   ├── settings.py
-    │   ├── urls.py
-    │   └── wsgi.py
-    ├── media/
-    │   └── products/
->>>>>>> Stashed changes
-    │       ├── FROCK.avif
-    │       ├── jeans.jpg
-    │       ├── kurta_set.webp
-    │       ├── shirt.webp
-    │       ├── shoes.jfif
-    │       └── tshirt.webp
-<<<<<<< Updated upstream
-    ├── store/                      # Main e-commerce application logic
-    │   ├── migrations/            # Database migration history files
-    │   ├── static/                # Static assets specific to the store app
-    │   │   └── store/
-    │   │       ├── cart.js        # Shopping cart frontend interactions
-    │   │       └── style.css      # Core stylesheet for styling components
-    │   ├── templates/             # HTML files rendered by Django views
-    │   │   └── store/
-    │   │       ├── base.html      # Global layout template skeleton
-    │   │       ├── cart.html      # Shopping cart layout page
-    │   │       ├── checkout.html  # Order checkout form page
-    │   │       ├── login.html     # User login interface
-    │   │       ├── product_detail.html
-    │   │       ├── product_list.html
-    │   │       ├── product_modules.html
-    │   │       └── register.html  # New user registration page
-    │   ├── __init__.py
-    │   ├── admin.py               # Admin interface models configuration
-    │   ├── models.py              # Database schemas (Products, Cart, Order)
-    │   └── views.py               # Request handlers and business logic
-    ├── db.sqlite3                  # Local development SQLite database file
-    ├── manage.py                   # Django's command-line execution script
-    └── README.md                   # Project documentation manual
-=======
-    ├── store/
-    │   ├── migrations/
-    │   ├── static/
-    │   │   └── store/
-    │   │       ├── cart.js
-    │   │       └── style.css
-    │   ├── templates/
-    │   │   └── store/
-    │   │       ├── base.html
-    │   │       ├── cart.html
-    │   │       ├── checkout.html
-    │   │       ├── login.html
-    │   │       ├── product_detail.html
-    │   │       ├── product_list.html
-    │   │       ├── product_modules.html
-    │   │       └── register.html
-    │   ├── __init__.py
-    │   ├── admin.py
-    │   ├── models.py
-    │   └── views.py
-    ├── db.sqlite3
-    ├── manage.py
-    └── README.md
->>>>>>> Stashed changes
-
----
-
+  
 ## ⚙️ Installation and Setup
 
 Follow these steps to set up and run the project locally on your machine:
@@ -110,7 +43,7 @@ Follow these steps to set up and run the project locally on your machine:
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/dikshasingh9259-create/codealpha_tasks/tree/main/codealpha_ecommercesite
-cd codealpha_tasks
+cd codealpha_tasks/codealpha_ecommercesite
 ```
 
 ### 2. Set Up a Virtual Environment
