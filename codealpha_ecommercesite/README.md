@@ -28,6 +28,7 @@ A dynamic, full-stack e-commerce web application featuring a responsive HTML/CSS
 
 CODEALPHA_TASKS/
 └── codealpha_ecommercesite/
+<<<<<<< Updated upstream
     ├── ecommerce/                  # Main Django project configuration folder
     │   ├── __init__.py
     │   ├── settings.py            # Project settings and configurations
@@ -35,12 +36,22 @@ CODEALPHA_TASKS/
     │   └── wsgi.py                # WSGI deployment configuration
     ├── media/                      # User-uploaded media files
     │   └── products/              # Product images displayed on the storefront
+=======
+    ├── ecommerce/
+    │   ├── __init__.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── media/
+    │   └── products/
+>>>>>>> Stashed changes
     │       ├── FROCK.avif
     │       ├── jeans.jpg
     │       ├── kurta_set.webp
     │       ├── shirt.webp
     │       ├── shoes.jfif
     │       └── tshirt.webp
+<<<<<<< Updated upstream
     ├── store/                      # Main e-commerce application logic
     │   ├── migrations/            # Database migration history files
     │   ├── static/                # Static assets specific to the store app
@@ -64,6 +75,31 @@ CODEALPHA_TASKS/
     ├── db.sqlite3                  # Local development SQLite database file
     ├── manage.py                   # Django's command-line execution script
     └── README.md                   # Project documentation manual
+=======
+    ├── store/
+    │   ├── migrations/
+    │   ├── static/
+    │   │   └── store/
+    │   │       ├── cart.js
+    │   │       └── style.css
+    │   ├── templates/
+    │   │   └── store/
+    │   │       ├── base.html
+    │   │       ├── cart.html
+    │   │       ├── checkout.html
+    │   │       ├── login.html
+    │   │       ├── product_detail.html
+    │   │       ├── product_list.html
+    │   │       ├── product_modules.html
+    │   │       └── register.html
+    │   ├── __init__.py
+    │   ├── admin.py
+    │   ├── models.py
+    │   └── views.py
+    ├── db.sqlite3
+    ├── manage.py
+    └── README.md
+>>>>>>> Stashed changes
 
 ---
 

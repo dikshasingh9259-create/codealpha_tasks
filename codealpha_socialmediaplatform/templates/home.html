@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if posts %}
+        {% for post in posts %}
+            <div class="card" style="padding: 0; margin-bottom: 30px;">
+                <!-- Header -->
+                <div style="padding: 14px; font-weight: bold;">
+                    <a href="{% url 'profile' post.author.username %}" style="text-decoration: none; color: #262626;">{{ post.author.username }}</a>
+                </div>
+                
+                <!-- Main Post Image -->
+                <img src="{{ post.image.url }}" alt="Post image" style="width: 100%; display: block;">
+                
+                <!-- Action Tray Area -->
+                <div style="padding: 14px;">
+                    <div style="margin-bottom: 8px;">
+                        <a href="{% url 'like_post' post.id %}" style="text-decoration: none; font-size: 20px; color: #262626; margin-right: 15px;">❤️</a>
+                        <strong>{{ post.likes.count }} likes</strong>
+                    </div>
+
+                    <!-- Caption Section -->
+                    <span style="font-weight: bold; margin-right: 8px;">{{ post.author.username }}</span>
+                    {{ post.caption }}
+                    
+                    <!-- Dynamic Live Comment Sub-List -->
+                    <div style="margin-top: 15px; border-top: 1px solid #efefef; padding-top: 10px;">
+                        {% for comment in post.comments.all %}
+                            <div style="margin-bottom: 5px; font-size: 14px;">
+                                <strong>{{ comment.user.username }}</strong> {{ comment.text }}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Live Comment Input Box Box Tray -->
+                    <form method="POST" action="{% url 'add_comment' post.id %}" style="display: flex; margin-top: 15px; border-top: 1px solid #efefef; padding-top: 10px;">
+                        {% csrf_token %}
+                        <input type="text" name="comment_text" placeholder="Add a comment..." style="flex-grow: 1; border: none; outline: none; font-size: 14px;" required>
+                        <button type="submit" style="background: none; border: none; color: #0095f6; font-weight: bold; cursor: pointer;">Post</button>
+                    </form>
+                    
+                    <div style="color: #8e8e8e; font-size: 12px; margin-top: 8px;">{{ post.created_at|timesince }} ago</div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="card" style="text-align: center;">
+            <h3>No posts yet. Follow people or upload your first photo!</h3>
+        </div>
+    {% endif %}
+{% endblock %}

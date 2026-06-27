@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Social Media Platform</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #262626; }
+        nav { background: #fff; border-bottom: 1px solid #dbdbdb; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-index:100; }
+        nav a { text-decoration: none; color: #262626; margin-left: 20px; font-weight: bold; }
+        .container { max-width: 600px; margin: 30px auto; padding: 0 10px; }
+        .card { background: #fff; border: 1px solid #dbdbdb; border-radius: 3px; margin-bottom: 24px; padding: 20px; }
+        .form-control { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #dbdbdb; border-radius: 4px; box-sizing: border-box; }
+        .btn { background: #0095f6; color: #fff; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}" style="font-size: 20px; margin: 0;">Social Media App</a>
+        <form method="GET" action="{% url 'search_users' %}" style="display: flex; gap: 5px;">
+            <input type="text" name="q" placeholder="Search usernames..." style="padding: 5px 10px; border: 1px solid #dbdbdb; border-radius: 4px; outline: none;" value="{{ query|default:'' }}">
+            <button type="submit" style="background: #0095f6; color: white; border: none; padding: 5px 10px; border-radius: 4px; font-weight: bold; cursor: pointer;">🔍</button>
+        </form>
+        <div>
+            {% if user.is_authenticated %}
+                <a href="{% url 'create_post' %}">➕ New Post</a>
+                <a href="{% url 'profile' user.username %}">👤 My Profile</a>
+                <a href="{% url 'edit_profile' %}">⚙️ Edit Profile</a>
+                <a href="{% url 'logout' %}">Logout ({{ user.username }})</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

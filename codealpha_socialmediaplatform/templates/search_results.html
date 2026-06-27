@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card">
+        <h2>Search Results for "{{ query }}"</h2>
+        <hr style="border: none; border-top: 1px solid #dbdbdb; margin: 15px 0;">
+        
+        {% if results %}
+            {% for found_user in results %}
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f9f9f9;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="{{ found_user.profile.profile_picture.url }}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                        <a href="{% url 'profile' found_user.username %}" style="text-decoration: none; color: #262626; font-weight: bold; font-size: 16px;">
+                            {{ found_user.username }}
+                        </a>
+                    </div>
+                    <a href="{% url 'profile' found_user.username %}" class="btn" style="padding: 6px 12px; width: auto; font-size: 14px; text-decoration: none; text-align: center;">View Profile</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="color: #8e8e8e; text-align: center; padding: 20px 0;">No accounts found matching that name.</p>
+        {% endif %}
+    </div>
+{% endblock %}
